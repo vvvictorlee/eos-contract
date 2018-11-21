@@ -4,9 +4,9 @@ cd $WORK_DIR
 WORK_DIR=`pwd`
 OS=`uname`
 
-COMPILER='js4eos compile'
+COMPILER="js4eos compile"
 #COMPILER='eosiocpp'
-CLEOS='js4eos'
+CLEOS="js4eos"
 #CLEOS='cleos'
 
 LOCAL=true
@@ -31,7 +31,7 @@ $CLEOS config -n jungle
 #CLEOS='cleos -u junglenodeurl'
 fi
 
-CONTRACT_NAME='hello'
+CONTRACT_NAME='rollback'
 
 if [ $LOCAL = true ];then
 CONTRACT_ACCOUNT='contract1111'
@@ -72,6 +72,7 @@ $CLEOS wallet import -n test $TEST_ACCOUNT_PRI_1
 $CLEOS wallet import -n test $TEST_ACCOUNT_PRI_2
 
 if [ $LOCAL = true ];then
+$CLEOS get info
 echo "creating account"
 $CLEOS create account eosio $CONTRACT_ACCOUNT $CONTRACT_ACCOUNT_PUB $CONTRACT_ACCOUNT_PUB
 $CLEOS create account eosio $TEST_ACCOUNT1 $TEST_ACCOUNT_PUB_1 $TEST_ACCOUNT_PUB_1
@@ -95,11 +96,10 @@ echo ""
 echo ""
 echo "********run test case **********"
 echo ""
+#assgin eosio.code permision to contract before push action
+$CLEOS push action $CONTRACT_ACCOUNT dream '[ "eosbetdice11", "1.0000 EOS", "game memostring" ]' -p $CONTRACT_ACCOUNT
 
-$CLEOS push action $CONTRACT_ACCOUNT hi '[ "args.user" ]' -p $TEST_ACCOUNT2
-
-$CLEOS push action $CONTRACT_ACCOUNT hi '[ "'$TEST_ACCOUNT2'" ]' -p $TEST_ACCOUNT2
 if [ $LOCAL = true ];then
 echo "stop nodeos"
-js4eos localnet stop
+$CLEOS localnet stop
 fi

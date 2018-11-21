@@ -4,7 +4,7 @@ cd $WORK_DIR
 WORK_DIR=`pwd`
 OS=`uname`
 
-COMPILER='js4eos compile'
+COMPILER='js4eos compile2'
 #COMPILER='eosiocpp'
 CLEOS='js4eos'
 #CLEOS='cleos'
@@ -85,7 +85,7 @@ fi
 cd $WORK_DIR/$CONTRACT_NAME
 echo "compiling"
 $COMPILER -o $CONTRACT_NAME.wasm $CONTRACT_NAME.cpp
-$COMPILER -g $CONTRACT_NAME.abi $CONTRACT_NAME.cpp
+$COMPILER -g $CONTRACT_NAME.abi $CONTRACT_NAME.cpp --contract hello
 cd -
 
 $CLEOS set contract $CONTRACT_ACCOUNT $CONTRACT_NAME -p $CONTRACT_ACCOUNT

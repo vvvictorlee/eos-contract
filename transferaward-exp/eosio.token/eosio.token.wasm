@@ -1,0 +1,18 @@
+<h1>Not Found
+<h1>Error: Not Found
+    at /data/d01/data/eoshelper/app.js:60:15
+    at Layer.handle [as handle_request] (/data/d01/data/eoshelper/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/data/d01/data/eoshelper/node_modules/express/lib/router/index.js:317:13)
+    at /data/d01/data/eoshelper/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/data/d01/data/eoshelper/node_modules/express/lib/router/index.js:335:12)
+    at next (/data/d01/data/eoshelper/node_modules/express/lib/router/index.js:275:10)
+    at /data/d01/data/eoshelper/node_modules/express/lib/router/index.js:635:15
+    at next (/data/d01/data/eoshelper/node_modules/express/lib/router/index.js:260:14)
+    at Function.handle (/data/d01/data/eoshelper/node_modules/express/lib/router/index.js:174:3)
+    at router (/data/d01/data/eoshelper/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/data/d01/data/eoshelper/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/data/d01/data/eoshelper/node_modules/express/lib/router/index.js:317:13)
+    at /data/d01/data/eoshelper/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/data/d01/data/eoshelper/node_modules/express/lib/router/index.js:335:12)
+    at next (/data/d01/data/eoshelper/node_modules/express/lib/router/index.js:275:10)
+    at next (/data/d01/data/eoshelper/node_modules/express/lib/router/route.js:127:14)
